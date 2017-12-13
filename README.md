@@ -3,9 +3,9 @@
 Description of running the prom/prometheus docker container in AWS ECS as a Fargate launch type, i.e. runs serverless/without EC2.  Went down this path to hang an instance on WWW to get a better understanding of prometheus.io (coming from a Nagios background), but mostly to begin collecting data for data analytics.
 
 ## prereqs
-1. ensure you have an AWS account 
-2. ensure docker is installed on your build box; the mac way https://docs.docker.com/docker-for-mac/install/
-3. ensure the aws cli is installed on your build box
+- ensure you have an AWS account 
+- ensure docker is installed on your build box; the mac way https://docs.docker.com/docker-for-mac/install/
+- ensure the aws cli is installed on your build box
 
 ## obtain docker container
 wanted to focus on ECS vs building containers, so just pulled from https://hub.docker.com/r/prom/prometheus/ using:
@@ -18,7 +18,7 @@ you can list your docker images using:
 
 output:
 > REPOSITORY                                                TAG                 IMAGE ID            CREATED             SIZE
-> prom/prometheus                                           latest              67141fa03496        4 weeks ago         80.2MB
+  prom/prometheus                                           latest              67141fa03496        4 weeks ago         80.2MB
 
 should you want to run the container locally:
 
