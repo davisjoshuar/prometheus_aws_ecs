@@ -40,10 +40,13 @@ view your local container:
 `docker push <AWS Account Number>.dkr.ecr.us-east-1.amazonaws.com/prometheus`
 
 check out your images:
+
 `docker images`
-> REPOSITORY                                                		TAG                 IMAGE ID            CREATED             SIZE
-> <AWS Account Number>.dkr.ecr.us-east-1.amazonaws.com/prometheus   	latest              67141fa03496        4 weeks ago         80.2MB ---- ECS
-> prom/prometheus                                           		latest              67141fa03496        4 weeks ago         80.2MB ---- local
+```
+REPOSITORY                                                		TAG                 IMAGE ID            CREATED             SIZE
+<AWS Account Number>.dkr.ecr.us-east-1.amazonaws.com/prometheus   	latest              67141fa03496        4 weeks ago         80.2MB ---- ECS
+prom/prometheus                                           		latest              67141fa03496        4 weeks ago         80.2MB ---- local
+```
 
 ## ECS - create task definition
 - again, first time, so used console; now have a JSON to build another w/ via cli or CloudFormation
