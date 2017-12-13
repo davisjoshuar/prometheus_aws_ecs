@@ -54,7 +54,8 @@ prom/prometheus                                           		latest              
   - created in VPC/subnet w/ IG/Public IP capabilities
   - FARGATE
   - ecsTaskExecutionRole IAM Role was created by the task def builder
-  - container -- associate with <AWS Account Number>.dkr.ecr.us-east-1.amazonaws.com/prometheus:latest 
+  - container
+    - associate with `<AWS Account Number>.dkr.ecr.us-east-1.amazonaws.com/prometheus:latest` 
 
 ## ECS - create cluster
 - again, first time, so used console
