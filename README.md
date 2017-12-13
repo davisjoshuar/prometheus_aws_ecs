@@ -51,17 +51,18 @@ prom/prometheus                                           		latest              
 ## ECS - create task definition
 - again, first time, so used console; now have a JSON to build another w/ via cli or CloudFormation
 - settings of merit:
--- created in VPC/subnet w/ IG/Public IP capabilities
--- FARGATE
--- ecsTaskExecutionRole IAM Role was created by the task def builder
--- container -- associate with <AWS Account Number>.dkr.ecr.us-east-1.amazonaws.com/prometheus:latest 
+  - created in VPC/subnet w/ IG/Public IP capabilities
+  - FARGATE
+  - ecsTaskExecutionRole IAM Role was created by the task def builder
+  - container -- associate with <AWS Account Number>.dkr.ecr.us-east-1.amazonaws.com/prometheus:latest 
 
 ## ECS - create cluster
 - again, first time, so used console
 - settings of merit:
--- FARGATE
--- Services -- create and map to task definition
---- creates AWSServiceRoleForECS IAM Role
+  - FARGATE
+  - Services
+    - create and map to task definition
+    - creates AWSServiceRoleForECS IAM Role
 
 ## Viewing status of container build
 - CloudWatch Logs > LogGroup > /ecs/prometheus
@@ -69,9 +70,12 @@ prom/prometheus                                           		latest              
 # Interacting with the ECS container
 
 ## http
-- go find the ENI in VPC associated with ecs, then `http://<Public IP>:9090/graph`
+go find the ENI in VPC associated with ecs, then `http://<Public IP>:9090/graph`
 
 ## docker cli
 `docker exec <IMAGE ID> <CMD>`
-e.g. list the contents of /etc/prometheus/prometheus.yml with `docker exec <IMAGE ID> cat /etc/prometheus/prometheus.yml`
+
+e.g. list the contents of /etc/prometheus/prometheus.yml:
+
+`docker exec <IMAGE ID> cat /etc/prometheus/prometheus.yml`
 
